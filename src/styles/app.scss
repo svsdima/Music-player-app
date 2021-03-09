@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.App {
+    height: 100vh;
+    background: radial-gradient( #C4D2C3, #536B6D);
+}
 h1,h2,h3 {
     color: rgb(49, 49, 49);
 }
