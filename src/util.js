@@ -5,7 +5,7 @@ function MusicList () {
         {
           name: "Deceiver",
           artist: "Disturbed",
-          cover: "https://avatars.yandex.net/get-music-content/34131/57ab0209.a.18206-2/m1000x1000",
+          cover: "https://lastfm.freetls.fastly.net/i/u/ar0/4fe09361eb8a41e18eb06279bb8bceb6.jpg",
           id: uuidv4(),
           active: true,
           color: ['#D5AB5F', '#1E0E0C'],
