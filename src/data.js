@@ -35,7 +35,7 @@ function MusicList () {
             cover: "https://chillhop.com/wp-content/uploads/2020/07/6194e7e2fd3023b82a31b0043fc34afce3be6551-1024x1024.jpg",
             id: uuidv4(),
             active: false,
-            color: ['#FBEAD6', '#AABAAE'],
+            color: ['#FBEAD6', '#533B42'],
             audio: 'https://mp3.chillhop.com/serve.php/?mp3=8181'
         },
           
