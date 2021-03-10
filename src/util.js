@@ -25,7 +25,7 @@ function MusicList () {
             artist: "Misha, Jussi Halme",
             cover: "https://chillhop.com/wp-content/uploads/2020/09/5bff1a6f1bd0e2168d29b4c841b811598135e457-1024x1024.jpg",
             id: uuidv4(),
-            active: true,
+            active: false,
             color: ['#9E8CAD', '#2A416D'],
             audio: 'https://mp3.chillhop.com/serve.php/?mp3=9248'
           },

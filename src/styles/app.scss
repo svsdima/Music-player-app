@@ -6,16 +6,20 @@
 }
 .App {
     height: 100vh;
-    background: linear-gradient(135deg, #C4D2C3, #536B6D);
+    // background: linear-gradient(135deg, #C4D2C3, #536B6D);
+    background: linear-gradient(135deg, #284263, #1e5543);
 }
 h1,h2,h3 {
-    color: rgb(49, 49, 49);
+    // color: rgb(49, 49, 49);
+    color: rgb(220, 220, 220);
 }
 h3,h4 {
     font-weight: 400;
-    color:rgb(20, 20, 20);
+    // color:rgb(20, 20, 20);
+    color: rgb(210, 210, 210);
 }
 
 @import './song';
 @import './player';
-@import './_library';
+@import './library';
+@import './nav';
