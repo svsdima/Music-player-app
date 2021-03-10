@@ -5,7 +5,9 @@ import {
     faPlayCircle, 
     faAngleLeft, 
     faAngleRight,
-    faPauseCircle } from '@fortawesome/free-solid-svg-icons';
+    faPauseCircle,
+    faVolumeUp,
+    faVolumeMute } from '@fortawesome/free-solid-svg-icons';
 
 const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
     //  Ref
@@ -23,6 +25,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
     const timeUpdateHandler = (e) => {
         const current = e.target.currentTime,
               duration = e.target.duration;
+              console.log(e);
         setSongInfo({...songInfo, currentTime: current, duration});
     };
     //  Minutes & Seconds
@@ -55,9 +58,9 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
                 <p>{getTime(songInfo.duration)}</p>
             </div>
             <div className="play-control">
-        <FontAwesomeIcon className="skip-back" size="2x" icon={faAngleLeft} />
-        <FontAwesomeIcon onClick={playSongHandler} className="play" size="2x" icon={isPlaying ? faPauseCircle : faPlayCircle} />
-        <FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight} />
+                <FontAwesomeIcon className="skip-back" size="2x" icon={faAngleLeft} />
+                <FontAwesomeIcon onClick={playSongHandler} className="play" size="2x" icon={isPlaying ? faPauseCircle : faPlayCircle} />
+                <FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight} />
             </div>
             <audio 
             onTimeUpdate={timeUpdateHandler} 
