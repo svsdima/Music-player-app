@@ -6,8 +6,8 @@
 }
 .App {
     height: 100vh;
-    // background: linear-gradient(135deg, #C4D2C3, #536B6D);
     background: linear-gradient(135deg, #284263, #1e5543);
+    transition: all 0.5s ease;
 }
 h1,h2,h3 {
     // color: rgb(49, 49, 49);
@@ -18,8 +18,12 @@ h3,h4 {
     // color:rgb(20, 20, 20);
     color: rgb(210, 210, 210);
 }
+.library-active {
+    margin-left: 20%;
+}
 
 @import './song';
 @import './player';
 @import './library';
 @import './nav';
+@import './_media';

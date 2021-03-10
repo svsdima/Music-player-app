@@ -7,13 +7,13 @@ nav {
         background: transparent;
         border: none;
         cursor: pointer;
-        border: 2px solid rgb(184, 184, 184);
-        padding: 7px;
+        border: 2px solid rgb(220, 220, 220);
+        padding: 5px;
         transition: all 0.3s ease;
         color: #d2d2d2;
-        font-size: 15px;
+        font-size: 17px;
         &:hover {
-            background:rgb(184, 184, 184);
+            background:rgb(220, 220, 220);
             color: black;
         }
     }
