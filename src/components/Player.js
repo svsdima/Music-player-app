@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {playAudio} from '../util';
 // Add Icons from Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -9,8 +10,24 @@ import {
     faVolumeUp,
     faVolumeMute } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong }) => {
-
+const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong, setSongs }) => {
+    // Use Effect
+    useEffect(() => {
+        const newSongs = songs.map((song) => {
+            if(song.id === currentSong.id) {
+                return {
+                    ...song,
+                    active: true,
+                }
+            } else {
+                return {
+                    ...song,
+                    active: false,
+                }
+            }
+        });
+        setSongs(newSongs);
+    },[currentSong]);
     // Event Handlers
     const playSongHandler = () => {
         if (isPlaying) {
@@ -40,10 +57,12 @@ const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, s
         if (direction === 'skip-back') {
             if ((currentIndex - 1) %songs.length === -1) {
                 setCurrentSong(songs[songs.length - 1]);
+                playAudio(isPlaying, audioRef);
                 return;
             }
             setCurrentSong(songs[(currentIndex - 1) % songs.length]);
         }
+        playAudio(isPlaying, audioRef);
     };
 
 
@@ -57,7 +76,7 @@ const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, setSongInfo, s
                 value={songInfo.currentTime} 
                 onChange={dragHandler}
                 type="range"/>
-                <p>{getTime(songInfo.duration)}</p>
+                <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
             </div>
             <div className="play-control">
                 <FontAwesomeIcon 

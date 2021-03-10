@@ -6,8 +6,8 @@ import Song from './components/Song';
 import Player from './components/Player';
 import Library from './components/Library';
 import Nav from './components/Nav';
-// Import Util
-import data from './util';
+// Import data
+import data from './data';
 
 function App() {
   //  Ref
@@ -40,7 +40,8 @@ function App() {
       setSongInfo={setSongInfo}
       songInfo={songInfo}
       songs={songs}
-      setCurrentSong={setCurrentSong} />
+      setCurrentSong={setCurrentSong}
+      setSongs={setSongs} />
       <Library 
         audioRef={audioRef}
         songs={songs} 
@@ -52,7 +53,9 @@ function App() {
             onTimeUpdate={timeUpdateHandler} 
             onLoadedMetadata={timeUpdateHandler}
             ref={audioRef} 
-            src={currentSong.audio}></audio>
+            src={currentSong.audio}
+            type="audio/mpeg">
+      </audio>
     </div>
   );
 }
